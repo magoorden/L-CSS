@@ -1,0 +1,644 @@
+Reading CIF file "generated_files_MLDES/subplant_60.cif".
+Preprocessing CIF specification.
+Converting CIF specification to internal format.
+
+CIF variables and location pointers:
+  Nr     Kind              Type  Name           Group  BDD vars  CIF values  BDD values  Values used
+  -----  ----------------  ----  -------------  -----  --------  ----------  ----------  -----------
+  1      location pointer  n/a   button12       0      1 * 2     2 * 2       2 * 2       100%
+  2      location pointer  n/a   emergencystop  1      1 * 2     2 * 2       2 * 2       100%
+  3      location pointer  n/a   in_U_N_A       2      2 * 2     4 * 2       4 * 2       100%
+  4      location pointer  n/a   in_U_N_S       3      3 * 2     8 * 2       8 * 2       100%
+  5      location pointer  n/a   in_U_S_A       4      2 * 2     4 * 2       4 * 2       100%
+  6      location pointer  n/a   in_U_S_S       5      3 * 2     8 * 2       8 * 2       100%
+  7      location pointer  n/a   stop1          6      1 * 2     2 * 2       2 * 2       100%
+  8      location pointer  n/a   stop2          7      1 * 2     2 * 2       2 * 2       100%
+  9      location pointer  n/a   stop4          8      1 * 2     2 * 2       2 * 2       100%
+  -----  ----------------  ----  -------------  -----  --------  ----------  ----------  -----------
+  Total                                         9      30        68          68          100%
+
+Applying automatic variable ordering:
+  Number of hyperedges: 42
+
+  Applying FORCE algorithm:
+    Maximum number of iterations: 30
+
+    Total span:                   70 (total)                 1.67 (avg/edge) [before]
+    Total span:                   58 (total)                 1.38 (avg/edge) [iteration 1]
+    Total span:                   42 (total)                 1.00 (avg/edge) [iteration 2]
+    Total span:                   38 (total)                 0.90 (avg/edge) [iteration 3]
+    Total span:                   38 (total)                 0.90 (avg/edge) [iteration 4]
+    Total span:                   38 (total)                 0.90 (avg/edge) [after]
+
+  Applying sliding window algorithm:
+    Window length: 4
+
+    Total span:                   38 (total)                 0.90 (avg/edge) [before]
+    Total span:                   38 (total)                 0.90 (avg/edge) [after]
+
+  Variable order changed.
+
+CIF variables and location pointers:
+  Nr     Kind              Type  Name           Group  BDD vars  CIF values  BDD values  Values used
+  -----  ----------------  ----  -------------  -----  --------  ----------  ----------  -----------
+  1      location pointer  n/a   in_U_N_A       0      2 * 2     4 * 2       4 * 2       100%
+  2      location pointer  n/a   in_U_N_S       1      3 * 2     8 * 2       8 * 2       100%
+  3      location pointer  n/a   in_U_S_A       2      2 * 2     4 * 2       4 * 2       100%
+  4      location pointer  n/a   in_U_S_S       3      3 * 2     8 * 2       8 * 2       100%
+  5      location pointer  n/a   button12       4      1 * 2     2 * 2       2 * 2       100%
+  6      location pointer  n/a   emergencystop  5      1 * 2     2 * 2       2 * 2       100%
+  7      location pointer  n/a   stop1          6      1 * 2     2 * 2       2 * 2       100%
+  8      location pointer  n/a   stop2          7      1 * 2     2 * 2       2 * 2       100%
+  9      location pointer  n/a   stop4          8      1 * 2     2 * 2       2 * 2       100%
+  -----  ----------------  ----  -------------  -----  --------  ----------  ----------  -----------
+  Total                                         9      30        68          68          100%
+
+Starting data-based synthesis.
+
+Invariant (components state invariant):  true
+Invariant (locations state invariant):   true
+Invariant (system state invariant):      true
+
+Initial   (discrete variables):          true
+Initial   (components init predicate):   true
+Initial   (aut/locs init predicate):     button12.released
+Initial   (aut/locs init predicate):     emergencystop.released
+Initial   (aut/locs init predicate):     stop1.released
+Initial   (aut/locs init predicate):     stop2.released
+Initial   (aut/locs init predicate):     stop4.released
+Initial   (aut/locs init predicate):     in_U_N_S.red
+Initial   (aut/locs init predicate):     in_U_N_A.red
+Initial   (aut/locs init predicate):     in_U_S_S.red
+Initial   (aut/locs init predicate):     in_U_S_A.red
+Initial   (auts/locs init predicate):    <bdd 15n 1p>
+Initial   (uncontrolled system):         <bdd 15n 1p>
+Initial   (system, combined init/inv):   <bdd 15n 1p>
+
+Marked    (components marker predicate): true
+Marked    (aut/locs marker predicate):   button12.released
+Marked    (aut/locs marker predicate):   emergencystop.released
+Marked    (aut/locs marker predicate):   stop1.released
+Marked    (aut/locs marker predicate):   stop2.released
+Marked    (aut/locs marker predicate):   stop4.released
+Marked    (aut/locs marker predicate):   in_U_N_S.red
+Marked    (aut/locs marker predicate):   in_U_N_A.red
+Marked    (aut/locs marker predicate):   in_U_S_S.red
+Marked    (aut/locs marker predicate):   in_U_S_A.red
+Marked    (auts/locs marker predicate):  <bdd 15n 1p>
+Marked    (uncontrolled system):         <bdd 15n 1p>
+Marked    (system, combined marked/inv): <bdd 15n 1p>
+
+State/event exclusion requirements:
+  Event "in_U_N_c_green" needs:
+    emergencystop.released
+    emergencystop.released and stop1.released and (stop2.released and stop4.released)
+  Event "in_U_S_c_green" needs:
+    emergencystop.released
+    emergencystop.released and stop1.released and (stop2.released and stop4.released)
+  Event "in_U_N_c_redgreen" needs:
+    emergencystop.released
+    emergencystop.released and stop1.released and (stop2.released and stop4.released)
+  Event "in_U_S_c_redgreen" needs:
+    emergencystop.released
+    emergencystop.released and stop1.released and (stop2.released and stop4.released)
+  Event "in_U_N_c_red" needs:
+    button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))
+  Event "in_U_N_c_redred" needs:
+    emergencystop.released and stop1.released and (stop2.released and stop4.released)
+  Event "in_U_S_c_red" needs:
+    button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))
+  Event "in_U_S_c_redred" needs:
+    emergencystop.released and stop1.released and (stop2.released and stop4.released)
+
+Uncontrolled system:
+  State: (controlled-behavior: ?)
+    Edge: (event: button12_u_push) (guard: button12.released) (assignments: button12 := button12.pushed)
+    Edge: (event: button12_u_release) (guard: button12.pushed) (assignments: button12 := button12.released)
+    Edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed)
+    Edge: (event: emergencystop_u_release) (guard: emergencystop.pushed) (assignments: emergencystop := emergencystop.released)
+    Edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed)
+    Edge: (event: stop1_u_release) (guard: stop1.pushed) (assignments: stop1 := stop1.released)
+    Edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed)
+    Edge: (event: stop2_u_release) (guard: stop2.pushed) (assignments: stop2 := stop2.released)
+    Edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed)
+    Edge: (event: stop4_u_release) (guard: stop4.pushed) (assignments: stop4 := stop4.released)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.red) (assignments: in_U_N_A := in_U_N_A.redgreen)
+    Edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.green) (assignments: in_U_N_A := in_U_N_A.redgreen)
+    Edge: (event: in_U_N_c_redred) (guard: in_U_N_A.red) (assignments: in_U_N_A := in_U_N_A.redred)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.green) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.redred) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.redgreen) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_green) (guard: in_U_N_A.redgreen) (assignments: in_U_N_A := in_U_N_A.green)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.red) (assignments: in_U_S_A := in_U_S_A.redgreen)
+    Edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.green) (assignments: in_U_S_A := in_U_S_A.redgreen)
+    Edge: (event: in_U_S_c_redred) (guard: in_U_S_A.red) (assignments: in_U_S_A := in_U_S_A.redred)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.green) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.redred) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.redgreen) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_green) (guard: in_U_S_A.redgreen) (assignments: in_U_S_A := in_U_S_A.green)
+
+Initialized controlled-behavior predicate using invariants: true.
+
+Extending controlled-behavior predicate using variable ranges.
+
+Restricting behavior using state/event exclusion requirements.
+
+Edge (event: in_U_N_c_redgreen) (guard: in_U_N_A.red) (assignments: in_U_N_A := in_U_N_A.redgreen): guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+Edge (event: in_U_N_c_redgreen) (guard: in_U_N_A.green) (assignments: in_U_N_A := in_U_N_A.redgreen): guard: in_U_N_A.green -> in_U_N_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+Edge (event: in_U_N_c_redred) (guard: in_U_N_A.red) (assignments: in_U_N_A := in_U_N_A.redred): guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+Edge (event: in_U_N_c_red) (guard: in_U_N_A.green) (assignments: in_U_N_A := in_U_N_A.red): guard: in_U_N_A.green -> (in_U_N_A.green or in_U_N_A.redgreen) and ((not in_U_N_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_N_A.redgreen) [requirement: button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))].
+Edge (event: in_U_N_c_red) (guard: in_U_N_A.redred) (assignments: in_U_N_A := in_U_N_A.red): guard: in_U_N_A.redred -> not in_U_N_A.red and ((not in_U_N_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_N_A.red or in_U_N_A.redred)) [requirement: button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))].
+Edge (event: in_U_N_c_red) (guard: in_U_N_A.redgreen) (assignments: in_U_N_A := in_U_N_A.red): guard: in_U_N_A.redgreen -> (in_U_N_A.green or in_U_N_A.redgreen) and (not in_U_N_A.green and (not in_U_N_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed)))) [requirement: button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))].
+Edge (event: in_U_N_c_green) (guard: in_U_N_A.redgreen) (assignments: in_U_N_A := in_U_N_A.green): guard: in_U_N_A.redgreen -> in_U_N_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+Edge (event: in_U_S_c_redgreen) (guard: in_U_S_A.red) (assignments: in_U_S_A := in_U_S_A.redgreen): guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+Edge (event: in_U_S_c_redgreen) (guard: in_U_S_A.green) (assignments: in_U_S_A := in_U_S_A.redgreen): guard: in_U_S_A.green -> in_U_S_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+Edge (event: in_U_S_c_redred) (guard: in_U_S_A.red) (assignments: in_U_S_A := in_U_S_A.redred): guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+Edge (event: in_U_S_c_red) (guard: in_U_S_A.green) (assignments: in_U_S_A := in_U_S_A.red): guard: in_U_S_A.green -> (in_U_S_A.green or in_U_S_A.redgreen) and ((not in_U_S_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_S_A.redgreen) [requirement: button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))].
+Edge (event: in_U_S_c_red) (guard: in_U_S_A.redred) (assignments: in_U_S_A := in_U_S_A.red): guard: in_U_S_A.redred -> not in_U_S_A.red and ((not in_U_S_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_S_A.red or in_U_S_A.redred)) [requirement: button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))].
+Edge (event: in_U_S_c_red) (guard: in_U_S_A.redgreen) (assignments: in_U_S_A := in_U_S_A.red): guard: in_U_S_A.redgreen -> (in_U_S_A.green or in_U_S_A.redgreen) and (not in_U_S_A.green and (not in_U_S_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed)))) [requirement: button12.pushed or emergencystop.pushed or (stop1.pushed or (stop2.pushed or stop4.pushed))].
+Edge (event: in_U_S_c_green) (guard: in_U_S_A.redgreen) (assignments: in_U_S_A := in_U_S_A.green): guard: in_U_S_A.redgreen -> in_U_S_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) [requirement: emergencystop.released and stop1.released and (stop2.released and stop4.released)].
+
+Restricted behavior using state/event exclusion requirements:
+  State: (controlled-behavior: true)
+    Edge: (event: button12_u_push) (guard: button12.released) (assignments: button12 := button12.pushed)
+    Edge: (event: button12_u_release) (guard: button12.pushed) (assignments: button12 := button12.released)
+    Edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed)
+    Edge: (event: emergencystop_u_release) (guard: emergencystop.pushed) (assignments: emergencystop := emergencystop.released)
+    Edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed)
+    Edge: (event: stop1_u_release) (guard: stop1.pushed) (assignments: stop1 := stop1.released)
+    Edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed)
+    Edge: (event: stop2_u_release) (guard: stop2.pushed) (assignments: stop2 := stop2.released)
+    Edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed)
+    Edge: (event: stop4_u_release) (guard: stop4.pushed) (assignments: stop4 := stop4.released)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen)
+    Edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.green -> in_U_N_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen)
+    Edge: (event: in_U_N_c_redred) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redred)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.green -> (in_U_N_A.green or in_U_N_A.redgreen) and ((not in_U_N_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_N_A.redgreen)) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.redred -> not in_U_N_A.red and ((not in_U_N_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_N_A.red or in_U_N_A.redred))) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.redgreen -> (in_U_N_A.green or in_U_N_A.redgreen) and (not in_U_N_A.green and (not in_U_N_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))))) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_green) (guard: in_U_N_A.redgreen -> in_U_N_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.green)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen)
+    Edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.green -> in_U_S_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen)
+    Edge: (event: in_U_S_c_redred) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redred)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.green -> (in_U_S_A.green or in_U_S_A.redgreen) and ((not in_U_S_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_S_A.redgreen)) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.redred -> not in_U_S_A.red and ((not in_U_S_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_S_A.red or in_U_S_A.redred))) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.redgreen -> (in_U_S_A.green or in_U_S_A.redgreen) and (not in_U_S_A.green and (not in_U_S_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))))) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_green) (guard: in_U_S_A.redgreen -> in_U_S_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.green)
+
+Round 1: started.
+
+Round 1: computing backward controlled-behavior predicate.
+Backward controlled-behavior: <bdd 15n 1p> [marker predicate]
+Backward reachability: iteration 1.
+Backward controlled-behavior: <bdd 15n 1p> -> <bdd 14n 1p> [backward reach with edge: (event: button12_u_release) (guard: button12.pushed) (assignments: button12 := button12.released), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 14n 1p> -> <bdd 13n 1p> [backward reach with edge: (event: emergencystop_u_release) (guard: emergencystop.pushed) (assignments: emergencystop := emergencystop.released), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 13n 1p> -> <bdd 12n 1p> [backward reach with edge: (event: stop1_u_release) (guard: stop1.pushed) (assignments: stop1 := stop1.released), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 12n 1p> -> <bdd 11n 1p> [backward reach with edge: (event: stop2_u_release) (guard: stop2.pushed) (assignments: stop2 := stop2.released), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 11n 1p> -> in_U_N_A.red and in_U_N_S.red and (in_U_S_A.red and in_U_S_S.red) [backward reach with edge: (event: stop4_u_release) (guard: stop4.pushed) (assignments: stop4 := stop4.released), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: in_U_N_A.red and in_U_N_S.red and (in_U_S_A.red and in_U_S_S.red) -> in_U_N_A.red and (in_U_N_S.off or in_U_N_S.red) and (in_U_S_A.red and in_U_S_S.red) [backward reach with edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: in_U_N_A.red and (in_U_N_S.off or in_U_N_S.red) and (in_U_S_A.red and in_U_S_S.red) -> in_U_N_A.red and (in_U_N_S.off or in_U_N_S.green) and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and in_U_N_S.red and (in_U_S_A.red and in_U_S_S.red) [backward reach with edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.off), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: in_U_N_A.red and (in_U_N_S.off or in_U_N_S.green) and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and in_U_N_S.red and (in_U_S_A.red and in_U_S_S.red) -> <bdd 11n 3p> [backward reach with edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 11n 3p> -> in_U_N_A.red and (in_U_N_S.off or in_U_N_S.redgreen) and (in_U_S_A.red and in_U_S_S.red) or (in_U_N_A.red and in_U_N_S.green and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and (in_U_N_S.red or in_U_N_S.lowred) and (in_U_S_A.red and in_U_S_S.red)) [backward reach with edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: in_U_N_A.red and (in_U_N_S.off or in_U_N_S.redgreen) and (in_U_S_A.red and in_U_S_S.red) or (in_U_N_A.red and in_U_N_S.green and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and (in_U_N_S.red or in_U_N_S.lowred) and (in_U_S_A.red and in_U_S_S.red)) -> in_U_N_A.red and (in_U_N_S.off or in_U_N_S.red or (in_U_N_S.redgreen or in_U_N_S.redred)) and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and (in_U_N_S.green or in_U_N_S.lowred) and (in_U_S_A.red and in_U_S_S.red) [backward reach with edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: in_U_N_A.red and (in_U_N_S.off or in_U_N_S.red or (in_U_N_S.redgreen or in_U_N_S.redred)) and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and (in_U_N_S.green or in_U_N_S.lowred) and (in_U_S_A.red and in_U_S_S.red) -> in_U_N_A.red and (in_U_N_S.off or in_U_N_S.green or (in_U_N_S.redgreen or in_U_N_S.greenred)) and (in_U_S_A.red and in_U_S_S.red) or (in_U_N_A.red and (in_U_N_S.red or in_U_N_S.redred) and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and in_U_N_S.lowred and (in_U_S_A.red and in_U_S_S.red)) [backward reach with edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: in_U_N_A.red and (in_U_N_S.off or in_U_N_S.green or (in_U_N_S.redgreen or in_U_N_S.greenred)) and (in_U_S_A.red and in_U_S_S.red) or (in_U_N_A.red and (in_U_N_S.red or in_U_N_S.redred) and (in_U_S_A.red and in_U_S_S.red) or in_U_N_A.red and in_U_N_S.lowred and (in_U_S_A.red and in_U_S_S.red)) -> in_U_N_A.red and (in_U_S_A.red and in_U_S_S.red) [backward reach with edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: in_U_N_A.red and (in_U_S_A.red and in_U_S_S.red) -> <bdd 18n 6p> [backward reach with edge: (event: in_U_N_c_red) (guard: in_U_N_A.green -> (in_U_N_A.green or in_U_N_A.redgreen) and ((not in_U_N_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_N_A.redgreen)) (assignments: in_U_N_A := in_U_N_A.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 18n 6p> -> <bdd 18n 11p> [backward reach with edge: (event: in_U_N_c_red) (guard: in_U_N_A.redred -> not in_U_N_A.red and ((not in_U_N_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_N_A.red or in_U_N_A.redred))) (assignments: in_U_N_A := in_U_N_A.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 18n 11p> -> <bdd 17n 11p> [backward reach with edge: (event: in_U_N_c_red) (guard: in_U_N_A.redgreen -> (in_U_N_A.green or in_U_N_A.redgreen) and (not in_U_N_A.green and (not in_U_N_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))))) (assignments: in_U_N_A := in_U_N_A.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 17n 11p> -> <bdd 15n 11p> [backward reach with edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 15n 11p> -> <bdd 17n 22p> [backward reach with edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.off), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 17n 22p> -> <bdd 19n 33p> [backward reach with edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 19n 33p> -> <bdd 17n 33p> [backward reach with edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 17n 33p> -> <bdd 15n 22p> [backward reach with edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 15n 22p> -> <bdd 17n 33p> [backward reach with edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 17n 33p> -> <bdd 11n 11p> [backward reach with edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 11n 11p> -> <bdd 10n 16p> [backward reach with edge: (event: in_U_S_c_red) (guard: in_U_S_A.green -> (in_U_S_A.green or in_U_S_A.redgreen) and ((not in_U_S_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_S_A.redgreen)) (assignments: in_U_S_A := in_U_S_A.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 10n 16p> -> <bdd 11n 31p> [backward reach with edge: (event: in_U_S_c_red) (guard: in_U_S_A.redred -> not in_U_S_A.red and ((not in_U_S_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_S_A.red or in_U_S_A.redred))) (assignments: in_U_S_A := in_U_S_A.red), restricted to current/previous controlled-behavior predicate: true]
+Backward controlled-behavior: <bdd 11n 31p> -> <bdd 9n 21p> [backward reach with edge: (event: in_U_S_c_red) (guard: in_U_S_A.redgreen -> (in_U_S_A.green or in_U_S_A.redgreen) and (not in_U_S_A.green and (not in_U_S_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))))) (assignments: in_U_S_A := in_U_S_A.red), restricted to current/previous controlled-behavior predicate: true]
+Backward reachability: iteration 2.
+Backward controlled-behavior: <bdd 9n 21p> -> true [backward reach with edge: (event: button12_u_push) (guard: button12.released) (assignments: button12 := button12.pushed), restricted to current/previous controlled-behavior predicate: true]
+Backward reachability: iteration 3.
+Backward controlled-behavior: true [fixed point].
+
+Round 1: computing backward uncontrolled bad-state predicate.
+Backward uncontrolled bad-state: false [current/previous controlled behavior predicate]
+Backward reachability: iteration 1.
+
+Round 1: computing forward controlled-behavior predicate.
+Forward controlled-behavior: <bdd 15n 1p> [initialization predicate]
+Forward reachability: iteration 1.
+Forward controlled-behavior: <bdd 15n 1p> -> <bdd 14n 1p> [forward reach with edge: (event: button12_u_push) (guard: button12.released) (assignments: button12 := button12.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 14n 1p> -> <bdd 13n 1p> [forward reach with edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 13n 1p> -> <bdd 12n 1p> [forward reach with edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 12n 1p> -> <bdd 11n 1p> [forward reach with edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 11n 1p> -> in_U_N_A.red and in_U_N_S.red and (in_U_S_A.red and in_U_S_S.red) [forward reach with edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: in_U_N_A.red and in_U_N_S.red and (in_U_S_A.red and in_U_S_S.red) -> <bdd 23n 2p> [forward reach with edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 23n 2p> -> <bdd 23n 3p> [forward reach with edge: (event: in_U_N_c_redred) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 23n 3p> -> <bdd 22n 3p> [forward reach with edge: (event: in_U_N_c_green) (guard: in_U_N_A.redgreen -> in_U_N_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.green), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 22n 3p> -> <bdd 23n 6p> [forward reach with edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 23n 6p> -> <bdd 22n 7p> [forward reach with edge: (event: in_U_S_c_redred) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 22n 7p> -> <bdd 20n 5p> [forward reach with edge: (event: in_U_S_c_green) (guard: in_U_S_A.redgreen -> in_U_S_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.green), restricted to current/previous controlled-behavior predicate: true]
+Forward reachability: iteration 2.
+Forward controlled-behavior: <bdd 20n 5p> -> <bdd 19n 5p> [forward reach with edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 19n 5p> -> <bdd 18n 5p> [forward reach with edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 18n 5p> -> <bdd 17n 5p> [forward reach with edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 17n 5p> -> in_U_N_S.red and in_U_S_S.red [forward reach with edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: in_U_N_S.red and in_U_S_S.red -> <bdd 11n 4p> [forward reach with edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 11n 4p> -> (in_U_N_A.red or in_U_N_A.redred) and (in_U_N_S.red and in_U_S_S.red) or ((in_U_N_A.green or in_U_N_A.redgreen) and (in_U_N_S.redgreen and in_U_S_S.red) or (in_U_N_A.green or in_U_N_A.redgreen) and (in_U_N_S.red and in_U_S_S.red)) [forward reach with edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: (in_U_N_A.red or in_U_N_A.redred) and (in_U_N_S.red and in_U_S_S.red) or ((in_U_N_A.green or in_U_N_A.redgreen) and (in_U_N_S.redgreen and in_U_S_S.red) or (in_U_N_A.green or in_U_N_A.redgreen) and (in_U_N_S.red and in_U_S_S.red)) -> <bdd 13n 4p> [forward reach with edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 13n 4p> -> <bdd 15n 6p> [forward reach with edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.off), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 15n 6p> -> <bdd 16n 7p> [forward reach with edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.green), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 16n 7p> -> <bdd 24n 9p> [forward reach with edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.green -> in_U_N_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 24n 9p> -> <bdd 34n 19p> [forward reach with edge: (event: in_U_N_c_red) (guard: in_U_N_A.green -> (in_U_N_A.green or in_U_N_A.redgreen) and ((not in_U_N_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_N_A.redgreen)) (assignments: in_U_N_A := in_U_N_A.red), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 34n 19p> -> <bdd 36n 24p> [forward reach with edge: (event: in_U_N_c_red) (guard: in_U_N_A.redred -> not in_U_N_A.red and ((not in_U_N_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_N_A.red or in_U_N_A.redred))) (assignments: in_U_N_A := in_U_N_A.red), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 36n 24p> -> <bdd 51n 96p> [forward reach with edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 51n 96p> -> <bdd 48n 72p> [forward reach with edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 48n 72p> -> <bdd 57n 96p> [forward reach with edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 57n 96p> -> <bdd 63n 144p> [forward reach with edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.off), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 63n 144p> -> <bdd 66n 168p> [forward reach with edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.green), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 66n 168p> -> <bdd 64n 184p> [forward reach with edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.green -> in_U_S_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 64n 184p> -> <bdd 64n 288p> [forward reach with edge: (event: in_U_S_c_red) (guard: in_U_S_A.green -> (in_U_S_A.green or in_U_S_A.redgreen) and ((not in_U_S_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_S_A.redgreen)) (assignments: in_U_S_A := in_U_S_A.red), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 64n 288p> -> <bdd 69n 325p> [forward reach with edge: (event: in_U_S_c_red) (guard: in_U_S_A.redred -> not in_U_S_A.red and ((not in_U_S_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_S_A.red or in_U_S_A.redred))) (assignments: in_U_S_A := in_U_S_A.red), restricted to current/previous controlled-behavior predicate: true]
+Forward reachability: iteration 3.
+Forward controlled-behavior: <bdd 69n 325p> -> <bdd 40n 113p> [forward reach with edge: (event: button12_u_release) (guard: button12.pushed) (assignments: button12 := button12.released), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 40n 113p> -> <bdd 39n 113p> [forward reach with edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 39n 113p> -> <bdd 38n 113p> [forward reach with edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 38n 113p> -> <bdd 37n 113p> [forward reach with edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 37n 113p> -> <bdd 18n 49p> [forward reach with edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 18n 49p> -> <bdd 35n 77p> [forward reach with edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 35n 77p> -> <bdd 37n 91p> [forward reach with edge: (event: in_U_N_c_redred) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 37n 91p> -> <bdd 34n 70p> [forward reach with edge: (event: in_U_N_c_green) (guard: in_U_N_A.redgreen -> in_U_N_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.green), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 34n 70p> -> <bdd 39n 107p> [forward reach with edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 39n 107p> -> <bdd 37n 118p> [forward reach with edge: (event: in_U_S_c_redred) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 37n 118p> -> <bdd 30n 79p> [forward reach with edge: (event: in_U_S_c_green) (guard: in_U_S_A.redgreen -> in_U_S_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.green), restricted to current/previous controlled-behavior predicate: true]
+Forward reachability: iteration 4.
+Forward controlled-behavior: <bdd 30n 79p> -> <bdd 29n 79p> [forward reach with edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 29n 79p> -> <bdd 28n 79p> [forward reach with edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 28n 79p> -> <bdd 27n 79p> [forward reach with edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 27n 79p> -> (in_U_N_S.off or in_U_N_S.redgreen) and (in_U_S_S.off or in_U_S_S.redgreen) or (in_U_N_S.off or in_U_N_S.redgreen) and in_U_S_S.green or ((in_U_N_S.off or in_U_N_S.redgreen) and (in_U_S_S.red or in_U_S_S.redred) or in_U_N_S.green and (in_U_S_S.off or in_U_S_S.redgreen)) or (in_U_N_S.green and in_U_S_S.green or in_U_N_S.green and (in_U_S_S.red or in_U_S_S.redred) or ((in_U_N_S.red or in_U_N_S.redred) and (in_U_S_S.off or in_U_S_S.redgreen) or ((in_U_N_S.red or in_U_N_S.redred) and in_U_S_S.green or (in_U_N_S.red or in_U_N_S.redred) and (in_U_S_S.red or in_U_S_S.redred)))) [forward reach with edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: (in_U_N_S.off or in_U_N_S.redgreen) and (in_U_S_S.off or in_U_S_S.redgreen) or (in_U_N_S.off or in_U_N_S.redgreen) and in_U_S_S.green or ((in_U_N_S.off or in_U_N_S.redgreen) and (in_U_S_S.red or in_U_S_S.redred) or in_U_N_S.green and (in_U_S_S.off or in_U_S_S.redgreen)) or (in_U_N_S.green and in_U_S_S.green or in_U_N_S.green and (in_U_S_S.red or in_U_S_S.redred) or ((in_U_N_S.red or in_U_N_S.redred) and (in_U_S_S.off or in_U_S_S.redgreen) or ((in_U_N_S.red or in_U_N_S.redred) and in_U_S_S.green or (in_U_N_S.red or in_U_N_S.redred) and (in_U_S_S.red or in_U_S_S.redred)))) -> <bdd 13n 30p> [forward reach with edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 13n 30p> -> <bdd 12n 21p> [forward reach with edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 12n 21p> -> <bdd 13n 27p> [forward reach with edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.lowred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 13n 27p> -> <bdd 14n 30p> [forward reach with edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.greenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 14n 30p> -> <bdd 13n 24p> [forward reach with edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.redgreenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 13n 24p> -> <bdd 15n 33p> [forward reach with edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.lowred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 15n 33p> -> <bdd 14n 27p> [forward reach with edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.greenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 14n 27p> -> <bdd 24n 33p> [forward reach with edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.green -> in_U_N_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 24n 33p> -> <bdd 33n 63p> [forward reach with edge: (event: in_U_N_c_red) (guard: in_U_N_A.green -> (in_U_N_A.green or in_U_N_A.redgreen) and ((not in_U_N_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_N_A.redgreen)) (assignments: in_U_N_A := in_U_N_A.red), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 33n 63p> -> <bdd 48n 210p> [forward reach with edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 48n 210p> -> <bdd 45n 147p> [forward reach with edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 45n 147p> -> <bdd 48n 189p> [forward reach with edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.lowred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 48n 189p> -> <bdd 51n 210p> [forward reach with edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.greenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 51n 210p> -> <bdd 48n 168p> [forward reach with edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.redgreenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 48n 168p> -> <bdd 54n 231p> [forward reach with edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.lowred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 54n 231p> -> <bdd 51n 189p> [forward reach with edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.greenred), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 51n 189p> -> <bdd 52n 203p> [forward reach with edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.green -> in_U_S_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 52n 203p> -> <bdd 47n 267p> [forward reach with edge: (event: in_U_S_c_red) (guard: in_U_S_A.green -> (in_U_S_A.green or in_U_S_A.redgreen) and ((not in_U_S_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_S_A.redgreen)) (assignments: in_U_S_A := in_U_S_A.red), restricted to current/previous controlled-behavior predicate: true]
+Forward reachability: iteration 5.
+Forward controlled-behavior: <bdd 47n 267p> -> <bdd 18n 50p> [forward reach with edge: (event: button12_u_release) (guard: button12.pushed) (assignments: button12 := button12.released), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 18n 50p> -> <bdd 17n 50p> [forward reach with edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 17n 50p> -> <bdd 16n 50p> [forward reach with edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 16n 50p> -> <bdd 15n 50p> [forward reach with edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward controlled-behavior: <bdd 15n 50p> -> true [forward reach with edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed), restricted to current/previous controlled-behavior predicate: true]
+Forward reachability: iteration 6.
+Forward controlled-behavior: true [fixed point].
+
+Round 1: finished, controlled behavior is stable.
+
+Computing controlled system guards.
+
+Final synthesis result:
+  State: (controlled-behavior: true)
+    Edge: (event: button12_u_push) (guard: button12.released) (assignments: button12 := button12.pushed)
+    Edge: (event: button12_u_release) (guard: button12.pushed) (assignments: button12 := button12.released)
+    Edge: (event: emergencystop_u_push) (guard: emergencystop.released) (assignments: emergencystop := emergencystop.pushed)
+    Edge: (event: emergencystop_u_release) (guard: emergencystop.pushed) (assignments: emergencystop := emergencystop.released)
+    Edge: (event: stop1_u_push) (guard: stop1.released) (assignments: stop1 := stop1.pushed)
+    Edge: (event: stop1_u_release) (guard: stop1.pushed) (assignments: stop1 := stop1.released)
+    Edge: (event: stop2_u_push) (guard: stop2.released) (assignments: stop2 := stop2.pushed)
+    Edge: (event: stop2_u_release) (guard: stop2.pushed) (assignments: stop2 := stop2.released)
+    Edge: (event: stop4_u_push) (guard: stop4.released) (assignments: stop4 := stop4.pushed)
+    Edge: (event: stop4_u_release) (guard: stop4.pushed) (assignments: stop4 := stop4.released)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redred and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_on) (guard: in_U_N_A.redgreen and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_g_on) (guard: in_U_N_A.redgreen and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.off) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_s_on) (guard: in_U_N_A.redred and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.redgreenred)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.red) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_r_off) (guard: in_U_N_A.green and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.greenred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.green) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.redgreen) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.lowred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.red and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_g_off) (guard: in_U_N_A.redred and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redred)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.lowred) (assignments: in_U_N_S := in_U_N_S.off)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.redred) (assignments: in_U_N_S := in_U_N_S.red)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.greenred) (assignments: in_U_N_S := in_U_N_S.green)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.red and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.green and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_u_s_off) (guard: in_U_N_A.redgreen and in_U_N_S.redgreenred) (assignments: in_U_N_S := in_U_N_S.redgreen)
+    Edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen)
+    Edge: (event: in_U_N_c_redgreen) (guard: in_U_N_A.green -> in_U_N_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redgreen)
+    Edge: (event: in_U_N_c_redred) (guard: in_U_N_A.red -> in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.redred)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.green -> (in_U_N_A.green or in_U_N_A.redgreen) and ((not in_U_N_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_N_A.redgreen)) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.redred -> not in_U_N_A.red and ((not in_U_N_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_N_A.red or in_U_N_A.redred))) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_red) (guard: in_U_N_A.redgreen -> (in_U_N_A.green or in_U_N_A.redgreen) and (not in_U_N_A.green and (not in_U_N_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))))) (assignments: in_U_N_A := in_U_N_A.red)
+    Edge: (event: in_U_N_c_green) (guard: in_U_N_A.redgreen -> in_U_N_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_N_A := in_U_N_A.green)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redred and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_on) (guard: in_U_S_A.redgreen and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_g_on) (guard: in_U_S_A.redgreen and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.off) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_s_on) (guard: in_U_S_A.redred and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.redgreenred)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.red) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_r_off) (guard: in_U_S_A.green and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.greenred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.green) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.redgreen) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.lowred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.red and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_g_off) (guard: in_U_S_A.redred and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redred)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.lowred) (assignments: in_U_S_S := in_U_S_S.off)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.redred) (assignments: in_U_S_S := in_U_S_S.red)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.greenred) (assignments: in_U_S_S := in_U_S_S.green)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.red and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.green and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_u_s_off) (guard: in_U_S_A.redgreen and in_U_S_S.redgreenred) (assignments: in_U_S_S := in_U_S_S.redgreen)
+    Edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen)
+    Edge: (event: in_U_S_c_redgreen) (guard: in_U_S_A.green -> in_U_S_A.green and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redgreen)
+    Edge: (event: in_U_S_c_redred) (guard: in_U_S_A.red -> in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.redred)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.green -> (in_U_S_A.green or in_U_S_A.redgreen) and ((not in_U_S_A.green or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and not in_U_S_A.redgreen)) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.redred -> not in_U_S_A.red and ((not in_U_S_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_S_A.red or in_U_S_A.redred))) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_red) (guard: in_U_S_A.redgreen -> (in_U_S_A.green or in_U_S_A.redgreen) and (not in_U_S_A.green and (not in_U_S_A.redgreen or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))))) (assignments: in_U_S_A := in_U_S_A.red)
+    Edge: (event: in_U_S_c_green) (guard: in_U_S_A.redgreen -> in_U_S_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))) (assignments: in_U_S_A := in_U_S_A.green)
+
+Controlled system:                     exactly 32,768 states.
+
+Initial (synthesis result):            true
+Initial (uncontrolled system):         <bdd 15n 1p>
+Initial (controlled system):           <bdd 15n 1p>
+Initial (removed by supervisor):       false
+Initial (added by supervisor):         true
+
+Simplification of controlled system under the assumption of the plants, requirement automata, state/event exclusion requirement invariants, state requirement invariants, and controlled behavior:
+  Event in_U_N_c_redgreen: guard: (in_U_N_A.red or in_U_N_A.green) and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) -> true [assume (in_U_N_A.red or in_U_N_A.green) and emergencystop.released and (stop1.released and (stop2.released and stop4.released))].
+  Event in_U_N_c_redred: guard: in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) -> true [assume in_U_N_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))].
+  Event in_U_N_c_red: guard: not in_U_N_A.red and ((not in_U_N_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_N_A.red or (in_U_N_A.redred or button12.pushed) or (emergencystop.pushed or stop1.pushed or (stop2.pushed or stop4.pushed)))) -> true [assume not in_U_N_A.red and ((not in_U_N_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_N_A.red or (in_U_N_A.redred or button12.pushed) or (emergencystop.pushed or stop1.pushed or (stop2.pushed or stop4.pushed))))].
+  Event in_U_N_c_green: guard: in_U_N_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) -> true [assume in_U_N_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))].
+  Event in_U_S_c_redgreen: guard: (in_U_S_A.red or in_U_S_A.green) and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) -> true [assume (in_U_S_A.red or in_U_S_A.green) and emergencystop.released and (stop1.released and (stop2.released and stop4.released))].
+  Event in_U_S_c_redred: guard: in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) -> true [assume in_U_S_A.red and emergencystop.released and (stop1.released and (stop2.released and stop4.released))].
+  Event in_U_S_c_red: guard: not in_U_S_A.red and ((not in_U_S_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_S_A.red or (in_U_S_A.redred or button12.pushed) or (emergencystop.pushed or stop1.pushed or (stop2.pushed or stop4.pushed)))) -> true [assume not in_U_S_A.red and ((not in_U_S_A.redred or (button12.pushed or emergencystop.pushed) or (stop1.pushed or (stop2.pushed or stop4.pushed))) and (in_U_S_A.red or (in_U_S_A.redred or button12.pushed) or (emergencystop.pushed or stop1.pushed or (stop2.pushed or stop4.pushed))))].
+  Event in_U_S_c_green: guard: in_U_S_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released)) -> true [assume in_U_S_A.redgreen and emergencystop.released and (stop1.released and (stop2.released and stop4.released))].
+
+Constructing output CIF specification.
+Writing output CIF file "generated_files_MLDES/subplant_60_sup.cif".
